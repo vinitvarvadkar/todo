@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome To Task Application</h2>
+    <hr>
+    <h3>Tasks</h3>
+
+    <!-- <form method="POST" action="/">
+        {% csrf_token %}
+        
+        {{TodoForm.Todo_title}}
+
+        <button type="submit">Add Task</button>
+    </form> -->
+
+    <hr>
+
+    <h3>Add a New Task:</h3>
+    <form method="POST" action="/">
+        {% csrf_token %}
+        {{ TodoForm.title }}
+        <button type="submit">Add Task</button>
+    </form>
+
+    <hr>
+
+
+    <!-- tasks in view.py file -->
+    {% for ta in task %}     
+      <p> {{ta}} </p> 
+
+    {% if task.completed == True %}
+
+        <p>Task Completed: Yes</p>
+
+    {% else %}
+
+         <p>Task Completed: No</p>
+
+    {% endif %}
+
+         <a href="{% url 'update-task' ta.id %}">Update Task</a>
+         <br>
+         <a href="{% url 'delete-task' ta.id %}">Delete Task</a>
+    
+
+        <p>{{task.title}}</p>
+
+        {% endfor %}
+</body>
+</html>

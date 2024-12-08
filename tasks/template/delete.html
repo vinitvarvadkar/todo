@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <h2>Delet Task</h2>
+
+    <p>Are you sure want to delete this Task?? {{task}} </p>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <button type="submit" >Delete</button>
+    </form>
+
+    <a href="{% url 'hi' %}">Cancel</a>
+
+</body>
+</html>
