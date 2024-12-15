@@ -77,8 +77,6 @@ def update_task(request,pk):
 
 
 
-
-
 def delete_task(request,pk):
     task=Todo.objects.get(id=pk)
 
@@ -89,6 +87,16 @@ def delete_task(request,pk):
     
     context={'TodoForm': Todo}
     return render(request,'delete.html',context)
+
+
+
+
+
+
+
+
+
+
 
 
 
